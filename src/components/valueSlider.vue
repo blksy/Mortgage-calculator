@@ -26,6 +26,12 @@
         this.$emit('updateSliderValue', newValue)
       }
     },
+    mounted(){
+      let input = this.$refs.input
+      input.step = this.step
+      input.min = this.min
+      input.max = this.max
+    }
   }
 </script>
 
