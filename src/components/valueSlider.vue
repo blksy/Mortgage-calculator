@@ -18,5 +18,12 @@
 </script>
 
 <style>
+   .text-area{
+    font-size: 30px;
+   }
+   .slider{
+    width: 80%;
+   }
+ 
 
 </style>
