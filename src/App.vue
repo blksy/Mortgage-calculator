@@ -3,12 +3,12 @@
     <div class="app">
       <h1 class="title">Mortgage Calculator</h1>
         <div class="app-container">
-          <value-slider></value-slider>
-          <value-slider></value-slider>
-          <value-slider></value-slider>
-          <value-slider></value-slider>
-          <end-quote></end-quote>
-          <end-quote></end-quote>
+          <value-slider text="Purchase price" max="1000000" min="0" step="10000" unit="USD" v-on:updateSliderValue="this.purchasePrice = $event"></value-slider>
+          <value-slider text="Down payment" max="1000000" min="0" step="10000" unit="USD" v-on:updateSliderValue="this.downPayment = $event"></value-slider>
+          <value-slider text="Repayment period" max="45" min="0" step="1" unit="yrs" v-on:updateSliderValue="this.repaymentTime = $event"></value-slider>
+          <value-slider text="Interest rate" max="15" min="0" step="1" unit="%" v-on:updateSliderValue="this.interestRate = $event"></value-slider>
+          <end-quote title="Loan Amount"></end-quote>
+          <end-quote title="Monthly payment"></end-quote>
           <button class="btn">Get a morgage quote</button>
         </div>
     </div> 
@@ -25,6 +25,16 @@ export default{
   components:{
     valueSlider,
     endQuote,
+  },
+   data(){
+    return{
+       purchasePrice: 0,
+       downPayment:0,
+       repaymentTime:0,
+       interestRate:0,
+       amountBorrowed:0,
+       monthlyPayment:0,
+    }
   }
 }
 

@@ -1,7 +1,7 @@
 <template>
     <div class="mortgage-quote">
-         <h1>Result</h1>
-         <p>Amount</p>
+         <h1>{{title}}</h1>
+         <p>{{ amount }}</p>
     </div>
 </template>
 
@@ -16,5 +16,7 @@
 </script>
 
 <style>
-
+    .mortgage-quote{
+        font-size: 15px;
+    }
 </style>
