@@ -1,17 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="app">
+      <h1 class="title">Mortgage Calculator</h1>
+        <div class="app-container">
+          <value-slider></value-slider>
+          <value-slider></value-slider>
+          <value-slider></value-slider>
+          <value-slider></value-slider>
+        </div>
+    </div> 
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+import valueSlider from './components/valueSlider.vue'
+
+export default{
+  name:'App',
+  components:{
+    valueSlider
   }
 }
+
 </script>
 
 <style>
