@@ -7,6 +7,9 @@
           <value-slider></value-slider>
           <value-slider></value-slider>
           <value-slider></value-slider>
+          <end-quote></end-quote>
+          <end-quote></end-quote>
+          <button>Get a morgage quote</button>
         </div>
     </div> 
   </div>
@@ -15,11 +18,13 @@
 <script>
 
 import valueSlider from './components/valueSlider.vue'
+import endQuote from './components/endQuote.vue';
 
 export default{
   name:'App',
   components:{
-    valueSlider
+    valueSlider,
+    endQuote,
   }
 }
 
