@@ -7,8 +7,8 @@
           <value-slider text="Down payment" max="1000000" min="0" step="10000" unit="USD" v-on:updateSliderValue="this.downPayment = $event"></value-slider>
           <value-slider text="Repayment period" max="45" min="0" step="1" unit="yrs" v-on:updateSliderValue="this.repaymentTime = $event"></value-slider>
           <value-slider text="Interest rate" max="15" min="0" step="1" unit="%" v-on:updateSliderValue="this.interestRate = $event"></value-slider>
-          <end-quote title="Loan Amount"></end-quote>
-          <end-quote title="Monthly payment"></end-quote>
+          <end-quote title="Loan Amount" v-bind:amount=" totalLoanAmount().toString() + ' USD'"></end-quote>
+          <end-quote title="Monthly payment" v-bind:amount="calculateMonthlyPayment().toString() + ' USD'"></end-quote>
           <button class="btn">Get a morgage quote</button>
         </div>
     </div> 
@@ -34,6 +34,20 @@ export default{
        interestRate:0,
        amountBorrowed:0,
        monthlyPayment:0,
+    }
+  },
+  methods:{
+    totalLoanAmount(){
+      let totalLoan = this.purchasePrice - this.downPayment;
+      return totalLoan.toFixed(2);
+    },
+    calculateMonthlyPayment(){
+      let totalLoan = this.purchasePrice - this.downPayment;
+      let repaymentTime = this.repaymentTime * 12
+      let interestRate = (this.interestRate / 100) /12
+      let monthlyPayment = totalLoan * interestRate * (Math.pow(1 + interestRate, repaymentTime)) / (Math.pow(1 + interestRate, repaymentTime) - 1);
+      monthlyPayment = monthlyPayment || 0;
+      return monthlyPayment.toFixed(2);
     }
   }
 }

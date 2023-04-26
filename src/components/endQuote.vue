@@ -17,6 +17,6 @@
 
 <style>
     .mortgage-quote{
-        font-size: 15px;
+        font-size: 20px;     
     }
 </style>
