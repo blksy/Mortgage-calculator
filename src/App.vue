@@ -68,7 +68,7 @@ export default{
 
 <style>
 * {
-  background-color: #7f7f7f;
+  background-color: #acbdbbbd;
   color: white;
   font-family: Roboto, Arial, sans-serif;
 }
